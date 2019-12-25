@@ -1,16 +1,15 @@
-import React, { Component, Fragment } from "react";
-
-// import { Router } from "./router";
-// import { Sidebar } from "./sidebar";
+import React, { Component } from "react";
+import { HeaderComposition } from "./header";
 
 export class IndexComposition extends Component {
 	public render(): JSX.Element {
 		return (
-			<Fragment>
-				{/* <Sidebar />
-				<Router />*/}
-				<div className="test-class">Hello World</div>
-			</Fragment>
+			<div className="wrapper">
+				<main>
+					<HeaderComposition />
+					<div className="test-class">Hello World</div>
+				</main>
+			</div>
 		);
 	}
 }

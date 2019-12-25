@@ -1,8 +1,9 @@
+/// <reference path='./index.d.ts'/>
 import * as View from "./view";
 import * as Core from "./core/API";
 
 try {
-	Core.launch()
+	Core.launch();
 
 	View.render();
 } catch (err) {
