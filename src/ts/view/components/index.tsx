@@ -7,7 +7,6 @@ export class IndexComposition extends Component {
 			<div className="wrapper">
 				<main>
 					<HeaderComposition />
-					<div className="test-class">Hello World</div>
 				</main>
 			</div>
 		);

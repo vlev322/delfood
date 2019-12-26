@@ -1,5 +1,8 @@
 import React from "react";
+
 import { Carousel } from "../../slider";
+import { Context } from "../../menu/context";
+import { Menu } from "../../menu";
 
 import img_1 from "../../../../../style/img/slider/1.jpg";
 import img_2 from "../../../../../style/img/slider/2.jpg";
@@ -20,6 +23,7 @@ export function HeaderComposition(): JSX.Element {
 	return (
 		<header>
 			<Carousel images={images} />
+			<Menu context={Context}/>
 		</header>
 	);
 }
