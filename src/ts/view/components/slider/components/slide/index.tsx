@@ -5,5 +5,10 @@ interface IProps {
 }
 
 export function Slide({ src }: IProps) {
-	return <img className="slider-slide" src={src} />;
+	const styles = {
+		backgroundImage: `url(${src})`,
+		backgroundSize: 'cover',
+		backgroundPosition: 'center'
+	}
+	return <div className="slider-slide" style={styles} />;
 }
