@@ -7,8 +7,8 @@ interface IProps {
 export function Slide({ src }: IProps) {
 	const styles = {
 		backgroundImage: `url(${src})`,
-		backgroundSize: 'cover',
-		backgroundPosition: 'center'
-	}
-	return <div className="slider-slide" style={styles} />;
+		backgroundSize: "cover",
+		backgroundPosition: "center"
+	};
+	return <div className="slider-slide layer-overley" style={styles} />;
 }

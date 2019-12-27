@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { Component } from "react";
 
 import { Slide } from "./components/slide";
 import { Arrow } from "./components/controls/arrow";
@@ -8,15 +8,36 @@ interface IProps {
 	images: string[];
 }
 
-export function Carousel({ images }: IProps): JSX.Element {
-	const [current, setCurrent] = useState(0);
-	const length = images.length - 1;
+export class Carousel extends Component<IProps> {
+	public state = {
+		current: 0
+	};
 
-	return (
-		<div className="slider">
-			{current <= 0 ? "" : <Arrow control={DIRECTION.LEFT} onClick={() => setCurrent(current - 1)} />}
-			<Slide src={images[current]} />
-			{current >= length ? "" : <Arrow control={DIRECTION.RIGTH} onClick={() => setCurrent(current + 1)} />}
-		</div>
-	);
+	private _len = this.props.images.length - 1;
+
+	private _next = (): void => {
+		const cur = this.state.current;
+		const last = cur > this._len - 1;
+		this.setState({
+			current: last ? 0 : cur + 1
+		});
+	};
+
+	private _prev = (): void => {
+		const cur = this.state.current;
+		const first = cur === 0;
+		this.setState({
+			current: first ? this._len : cur - 1
+		});
+	};
+
+	public render(): JSX.Element {
+		return (
+			<div className="slider">
+				<Arrow control={DIRECTION.LEFT} onClick={this._prev} />
+				<Slide src={this.props.images[this.state.current]} />
+				<Arrow control={DIRECTION.RIGTH} onClick={this._next} />
+			</div>
+		);
+	}
 }
