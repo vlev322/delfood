@@ -1,9 +1,9 @@
-import menuList from "../menu-data-list";
+import navList from "../nav-data-list";
 
 const list = [];
 
 const context = {
-  current: menuList[0],
+  current: navList[0],
 
   subscribe: fn => {
     list.push(fn);
@@ -21,9 +21,9 @@ const context = {
     context.goTo(item);
   },
 
-  getMenu(item) {
-    if (!item) return menuList.menu;
-    return menuList.subMenu[item] || [];
+  getNav(item) {
+    if (!item) return navList.nav;
+    return navList.subNav[item] || [];
   }
 };
 

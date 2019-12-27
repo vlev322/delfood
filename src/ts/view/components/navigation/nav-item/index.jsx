@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function MenuItem({ item, children, onClick }) {
+export default function NavItem({ item, children, onClick }) {
 	return (
 		<li onClick={onClick} className={Boolean(children) ? "dropdown" : ""}>
 			{item}
