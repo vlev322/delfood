@@ -1,4 +1,8 @@
 .menu
+	position absolute
+	top 50px
+	color #ffffff
+	font-size 18px
 	>ul
 		display flex
 		flex-direction row
@@ -8,10 +12,31 @@
 		li
 			cursor pointer
 			position relative
-
 			ul
 				position absolute
+				list-style-type none
+				top 20px
+				right -20px
+				padding-left 30px
 				display none
-
+				li
+					padding-top 5px
+					&:hover
+						color #22A6F2
 			&:hover >ul
 				display block
+		>li
+			&:before
+				content "|"
+				margin 0 25px
+			&:first-child
+				margin-left 50px
+				&:before
+					content none
+.dropdown
+	position relative
+	&:after
+		content "\21A9"
+		position absolute
+		right -15px
+		top 15px
