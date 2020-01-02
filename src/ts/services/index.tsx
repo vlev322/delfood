@@ -1,0 +1,2 @@
+export { CuisineService } from "./cuisines";
+
