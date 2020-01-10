@@ -11,6 +11,7 @@
 
 # library
 /node_modules/
+/temp_back/node_modules/
 
 # Prod build
 /build/
