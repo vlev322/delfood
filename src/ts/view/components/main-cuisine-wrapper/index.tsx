@@ -1,9 +1,5 @@
 import React, { Component } from "react";
 
-import { Cousines } from "../cuisines/cuisines-preview";
+import { Cousines } from "../cuisines/index";
 
-export class ContentWrapper extends Component {
-	render() {
-		return <Cousines />;
-	}
-}
+export const ContentWrapper = () => <Cousines />;
