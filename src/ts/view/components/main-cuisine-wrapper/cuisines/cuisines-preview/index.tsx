@@ -1,11 +1,8 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import { ICuisineProps, CuisineItem } from "../cuisine-item";
 import { CuisineService } from "../../../../../services";
-import { getDays } from "../../../../../services/days/index";
-import { MealCollection } from "../../../meals";
-import { DaysPreview } from "../../../days";
+import { MealsPreview } from "../../../meals/meals-preview";
 
 export class Cousines extends Component {
 	public state = { cuisines: [] as ICuisineProps[], days: [] = [] };
@@ -19,30 +16,15 @@ export class Cousines extends Component {
 	}
 
 	render() {
-		const days = getDays();
+		const cuisines = this.state.cuisines;
 		return (
 			<>
-					<div className="cuisines">
-						{this.state.cuisines.map(cuisine => (
-							<div key={cuisine.name}>
-								<CuisineItem key={cuisine.id} {...cuisine} />
-								<Link to={`/cuisine/${cuisine.name}`}>Відкрити меню</Link>
-							</div>
-						))}
-					</div>
-					<Switch>
-						{this.state.cuisines.map(({ name }) => (
-							<Route key={name} path={`/cuisine/${name}`}>
-								<h2>{name}</h2>
-								<DaysPreview name={name} days={days}/>
-								{days.map((day, index) => (
-									<Route path={`/cuisine/${name}/${day}`} key={day}>
-										<MealCollection day={index} name={name} />
-									</Route>
-								))}
-							</Route>
-						))}
-					</Switch>
+				<div className="cuisines">
+					{cuisines.map(cuisine => (
+						<CuisineItem key={cuisine.id} {...cuisine} />
+					))}
+				</div>
+				<MealsPreview cuisines={cuisines} />
 			</>
 		);
 	}

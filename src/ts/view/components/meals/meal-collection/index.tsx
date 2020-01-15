@@ -3,23 +3,15 @@ import React, { Component } from "react";
 import { MealItem } from "../meal-item";
 import { MealsService } from "../../../../services/meals/index";
 import { CartService } from "../../../../services/cart";
+import { IMeal } from "../_interface";
 
 interface IProps {
-	name: any;
+	name: string;
 	day: number;
 }
 
 interface IState {
 	meals: IMeal[];
-}
-
-interface IMeal {
-	id: number;
-	name: string;
-	description: string;
-	callories: number;
-	price: number;
-	days: number[];
 }
 
 export class MealCollection extends Component<IProps, IState> {

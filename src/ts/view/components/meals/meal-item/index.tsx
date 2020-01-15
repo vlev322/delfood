@@ -1,12 +1,8 @@
 import React from "react";
+import { IMeal } from "../_interface";
 
-interface IProps {
-	id: number;
-	name: string;
-	description: string;
-	callories: number;
+interface IProps extends IMeal {
 	image: string;
-	price: number;
 	_onClick: ({}) => void;
 }
 
