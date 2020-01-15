@@ -26,7 +26,7 @@ export class Cousines extends Component {
 					<Breadcrumbs />
 					<div className="cuisines">
 						{this.state.cuisines.map(cuisine => (
-							<div>
+							<div key={cuisine.name}>
 								<CuisineItem key={cuisine.id} {...cuisine} />
 								<Link to={`/cuisine/${cuisine.name}`}>Відкрити меню</Link>
 							</div>

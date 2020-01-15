@@ -1,45 +1,41 @@
-interface ICartData {
-	[key: string]: {}[];
-}
 interface ICartItem {
-	item: {}[];
+	id: number;
+	name: string;
+	callories: number;
+	price: number;
+	quantity: number;
+}
+interface ICartData {
+	items: ICartItem[];
 }
 interface ICart {
 	get: () => ICartData;
 	add: (item: ICartItem) => void;
-	remove: () => void;
+	remove: (id: number) => void;
 	removeAll: () => void;
 	quantity: () => number;
 }
 
 export class CartService implements ICart {
-	constructor() {
-		localStorage.setItem("cart", JSON.stringify({}));
-	}
 	public get() {
 		return JSON.parse(localStorage.getItem("cart") || "{}");
-		// return {
-		// 	monday: [
-		// 		{
-		// 			ukrainian: [
-		// 				{
-		// 					id: 2,
-		// 					name: "Голубці",
-		// 					description: "Reprehenderit nulla exercitation deserunt dolor consectetur culpa deserunt anim minim.",
-		// 					callories: 541,
-		// 					image: "Qui adipisicing minim adipisicing enim culpa mollit esse reprehenderit.",
-		// 					days: [0, 3, 4]
-		// 				}
-		// 			]
-		// 		}
-		// 	]
-		// };
 	}
 
-	public add(item: ICartItem) {	
-		localStorage.setItem("cart", JSON.stringify(item));
+	public add({ id, name, callories, price }: ICartItem) {
+		const cartData = JSON.parse(localStorage.getItem("cart") || "{}");
+
+		if (cartData.hasOwnProperty(id)) {
+			cartData[id].quantity += 1;
+		} else {
+			cartData[id] = { name, callories, price, quantity: 1 };
+		}
+		localStorage.setItem("cart", JSON.stringify(cartData));
+		console.log(cartData);
 	}
-	public remove() {}
+	public remove(id: number) {
+		const cartData = JSON.parse(localStorage.getItem("cart") || "{}");
+		delete cartData[id];
+	}
 	public removeAll() {
 		localStorage.removeItem("cart");
 	}

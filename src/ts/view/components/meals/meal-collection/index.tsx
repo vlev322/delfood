@@ -10,7 +10,16 @@ interface IProps {
 }
 
 interface IState {
-	meals: any;
+	meals: IMeal[];
+}
+
+interface IMeal {
+	id: number;
+	name: string;
+	description: string;
+	callories: number;
+	price: number;
+	days: number[];
 }
 
 export class MealCollection extends Component<IProps, IState> {
@@ -21,16 +30,13 @@ export class MealCollection extends Component<IProps, IState> {
 	public componentDidMount(): void {
 		const _mealService = new MealsService();
 		_mealService.getMealsAsync().then(result => {
-			const allMeals = result;
-			const mealList: [] = allMeals[this.props.name];
+			const mealList: IMeal[] = result[this.props.name];
 			const meals = mealList.filter((current: { days: number[] }) => current.days.includes(this.props.day));
 			this.setState({ meals });
 		});
-
 	}
 
 	render() {
-	const __onclick = () => console.log('add')
 		return (
 			<div className="meals">
 				{this.state.meals.map((meal: any) => (
