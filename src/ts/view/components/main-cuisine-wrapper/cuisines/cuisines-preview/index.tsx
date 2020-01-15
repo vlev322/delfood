@@ -22,7 +22,6 @@ export class Cousines extends Component {
 		const days = getDays();
 		return (
 			<>
-				<Router>
 					<div className="cuisines">
 						{this.state.cuisines.map(cuisine => (
 							<div key={cuisine.name}>
@@ -35,7 +34,7 @@ export class Cousines extends Component {
 						{this.state.cuisines.map(({ name }) => (
 							<Route key={name} path={`/cuisine/${name}`}>
 								<h2>{name}</h2>
-								<DaysPreview days={days}/>
+								<DaysPreview name={name} days={days}/>
 								{days.map((day, index) => (
 									<Route path={`/cuisine/${name}/${day}`} key={day}>
 										<MealCollection day={index} name={name} />
@@ -44,7 +43,6 @@ export class Cousines extends Component {
 							</Route>
 						))}
 					</Switch>
-				</Router>
 			</>
 		);
 	}

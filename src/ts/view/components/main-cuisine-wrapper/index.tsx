@@ -8,6 +8,5 @@ export const ContentWrapper = () => (
 	<Router>
 		<Breadcrumbs />
 		<Cousines />
-
 	</Router>
 );
