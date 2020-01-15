@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { ICuisineProps } from '../../view/components/cuisines/cuisine-item/'
+import { ICuisineProps } from '../../view/components/main-cuisine-wrapper/cuisines/cuisine-item'
 interface ICuisineService {
   getCuisinesAsync(): Promise<ICuisineProps[]>
 }

@@ -30,7 +30,6 @@ export class CartService implements ICart {
 			cartData[id] = { name, callories, price, quantity: 1 };
 		}
 		localStorage.setItem("cart", JSON.stringify(cartData));
-		console.log(cartData);
 	}
 	public remove(id: number) {
 		const cartData = JSON.parse(localStorage.getItem("cart") || "{}");

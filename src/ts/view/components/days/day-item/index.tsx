@@ -1,11 +1,13 @@
 import React from "react";
 
-interface IProps {
-  day: string
-}
+import { Link } from "react-router-dom";
 
-export function DayItem({day}:IProps):JSX.Element {
-  return (
-    <div>Day - {day}</div>
-  )
-}
+export const DaysPreview = ({ days }: any): JSX.Element => {
+	return (
+		<div className="days">
+			{days.map((day: string) => (
+				<div key={day}>{<Link to={`/cuisine/${name}/${day}`}>{day}</Link>}</div>
+			))}
+		</div>
+	);
+};
