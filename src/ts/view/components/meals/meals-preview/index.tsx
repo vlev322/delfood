@@ -12,7 +12,9 @@ export const MealsPreview = ({ cuisines }: any) => {
 		<Switch>
 			{cuisines.map(({ name }: any) => (
 				<Route key={name} path={`/cuisine/${name}`}>
-					<h2>{name}</h2>
+					<div className="cuisines-title">
+						<h2>{name}</h2>
+					</div>
 					<DaysPreview name={name} days={days} />
 					{days.map((day, index) => (
 						<Route path={`/cuisine/${name}/${day}`} key={day}>

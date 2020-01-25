@@ -31,9 +31,16 @@ export class MealCollection extends Component<IProps, IState> {
 	render() {
 		return (
 			<div className="meals">
-				{this.state.meals.map((meal: any) => (
-					<MealItem _onClick={this._cart.add} key={meal.id} {...meal} />
-				))}
+				<div>
+					{this.state.meals.length !== 0 ? (
+						this.state.meals.map((meal: any) => <MealItem _onClick={this._cart.add} key={meal.id} {...meal} />)
+					) : (
+						<>
+							<h2>On this day meals doesn't exist..</h2>
+							<p>Please, select another day.</p>
+						</>
+					)}
+				</div>
 			</div>
 		);
 	}

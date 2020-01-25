@@ -16,13 +16,25 @@ export function MealItem({ id, name, description, callories, image, price, _onCl
 		});
 	};
 	return (
-		<div data-id={id}>
+		<div>
 			<h3>{name}</h3>
-			<p>{description}</p>
-			<p>{callories}</p>
-			<p>{image}</p>
-			<p>{price}</p>
-			<button onClick={orderMeal}>Order it</button>
+			<p>
+				<span>Desctiption meal: </span>
+				{description}
+			</p>
+			<p>
+				<span>Quantity calories: </span>
+				{callories} ({callories * 4} kJ)
+			</p>
+			<p>
+				<span>Price: </span>
+				{price} UAH
+			</p>
+			<section className="btn-wrapper">
+				<a className="buy-btn" onClick={orderMeal}>
+					Order it
+				</a>
+			</section>
 		</div>
 	);
 }
