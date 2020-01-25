@@ -18,6 +18,9 @@ const images = [img_1, img_2, img_3, img_4, img_5, img_6];
 // 	"./style/img/1.jpg",
 // 	"./style/img/2.jpg",
 // 	"./style/img/3.jpg"
+// 	"./style/img/4.jpg",
+// 	"./style/img/5.jpg",
+// 	"./style/img/6.jpg"
 // ];
 
 export function HeaderComposition(): JSX.Element {

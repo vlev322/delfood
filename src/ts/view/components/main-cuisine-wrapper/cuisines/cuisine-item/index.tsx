@@ -8,13 +8,14 @@ export interface ICuisineProps {
 	image: string;
 }
 
-export function CuisineItem({ name, image, description }: ICuisineProps): JSX.Element {
-	return (
-		<div>
-			<h1>{name}</h1>
-			<img src={"data:image/jpeg;base64," + image} alt="photo cuisine" />
-			<p>{description}</p>
-			<Link to={`/cuisine/${name}`}>Відкрити меню</Link>
-		</div>
-	);
-}
+export const CuisineItem = ({ name, image, description }: ICuisineProps): JSX.Element => (
+	<div>
+		<h1>{name}</h1>
+		<section>
+			<img src={image} alt="photo cuisine" />
+		</section>
+		{/* <img src={"data:image/jpeg;base64," + image} alt="photo cuisine" /> */}
+		<p>{description}</p>
+		<Link to={`/cuisine/${name}`}>Open menu</Link>
+	</div>
+);
