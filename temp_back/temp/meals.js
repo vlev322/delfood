@@ -2,7 +2,7 @@ const meals = {
 	ukrainian: [
 		{
 			id: 1,
-			name: "Салат по-домашньому",
+			name: "Салат",
 			description:
 				"Розділену на суцвіття цвітну капусту варять і охолоджують. При використанні білокачанної капу­сти її шаткують і перетирають із сіллю. Квасолю варять.",
 			callories: 541,
@@ -12,7 +12,7 @@ const meals = {
 		},
 		{
 			id: 2,
-			name: "Капуста тушкована",
+			name: "Капуста-тушкована",
 			description: "Тушкована капуста зі свининою, шинкою, корейкою, шпиком, ковбасою",
 			callories: 998,
 			image: "Qui adipisicing minim adipisicing enim culpa mollit esse reprehenderit.",
@@ -51,7 +51,7 @@ const meals = {
 		},
 		{
 			id: 6,
-			name: "Молоко пряжене",
+			name: "Молоко-пряжене",
 			description:
 				"Молочний продукт, який виробляють тривалим пряженням молока: за температури 95-99°С протягом 3 годин або за температури 105°С протягом не менше 15 хвилин, але не доводячи до кипіння",
 			callories: 234,
@@ -61,7 +61,7 @@ const meals = {
 		},
 		{
 			id: 18,
-			name: "Пиріжки з капустою",
+			name: "Пиріжки",
 			description:
 				"Варіантів тіста і начинки для таких пиріжків може бути кілька, найпопулярнішими пиріжками є пиріжки з класичного дріжджового тіста з начинкою із суміші свіжої та квашеної капусти.",
 			callories: 658,
@@ -73,7 +73,7 @@ const meals = {
 	greek: [
 		{
 			id: 7,
-			name: "Greek salad",
+			name: "Greek-salad",
 			description:
 				"A simple Greek Salad loaded with lots of fresh veggies, olives and feta and tossed with a tangy lemon-herb vinaigrette",
 			callories: 632,
@@ -156,7 +156,7 @@ const meals = {
 		},
 		{
 			id: 16,
-			name: "Chinese Spaghetti Bolognese",
+			name: "Spaghetti",
 			description:
 				"You'll need: 8 oz. dried spaghetti. Salt. 1 tablespoon oil. 12 oz. ground beef. 1 medium onion, finely diced. 2 cloves garlic, minced. 2 teaspoons Shaoxing wine or dry sherry. 2 cups chicken stock.",
 			callories: 541,
@@ -166,7 +166,7 @@ const meals = {
 		},
 		{
 			id: 17,
-			name: "Chinese Chicken ",
+			name: "Chinese-Chicken ",
 			description:
 				"Asparagus and Chicken Stir-Fry. 02 of 20. Beggar's Chicken. 03 of 20. Bang Bang Chicken. 04 of 20. Chinese Bourbon Chicken. Cantonese Steamed Chicken. 4kodiak/Getty Images. 06 of 20. Cashew Chicken. 07 of 20. Chicken Lo Mein.",
 			callories: 541,

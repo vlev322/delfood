@@ -21,8 +21,8 @@ export const Contact = () => (
 		<div className="contact-map">
 			<iframe
 				src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13344.416747463541!2d-87.74853970944699!3d41.847007840652395!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e33aee39c98a7%3A0xe54abe570fc14005!2sAMC%20Cicero%2014!5e0!3m2!1sen!2sus!4v1580050159504!5m2!1sen!2sus"
-				width="600"
-				height="450"
+				width="350"
+				height="250"
 			></iframe>
 			<div className="contact-social">
 				<h2>Follow us on Social media:</h2>

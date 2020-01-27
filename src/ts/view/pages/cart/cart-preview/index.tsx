@@ -49,7 +49,9 @@ export const CartPreview = () => {
 					</div>
 				</div>
 			) : (
-				<h1>Cart is empty!</h1>
+				<div className="cart">
+					<h1>Cart is empty!</h1>
+				</div>
 			)}
 		</>
 	);

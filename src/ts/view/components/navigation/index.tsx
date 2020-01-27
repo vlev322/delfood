@@ -34,7 +34,7 @@ export const Navigation = () => {
 				<div className="search">
 					<div className="d5">
 						<form>
-							<input type="text" placeholder="Search here..." />
+							<input type="text" placeholder="Search food here..." />
 						</form>
 					</div>
 				</div>

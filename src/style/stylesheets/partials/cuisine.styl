@@ -1,4 +1,4 @@
-.cuisines, .days > div
+.cuisines, .days
   display flex
   justify-content space-between
   transition all 1.5s ease
@@ -64,8 +64,11 @@
         color wheat
 
 .days
-  > div
-    transition all 1.5s ease
+  div
+    display flex
+    flex-wrap wrap
+    align-items baseline
+    max-height 20vh
 
     a
       color #000
@@ -74,6 +77,7 @@
       background-color #fff
       border-radius 8px
       transition all 0.5s ease
+      border-right 1px solid #692B06
 
       &:hover
         background-color #F5DEB3
@@ -83,8 +87,8 @@
   flex-direction column
   align-items center
   transition all 1.5s ease
-  height 70vh
-  margin-top -75vh
+  height 65vh
+  margin-top -68vh
 
   >div
     border-radius 10px
