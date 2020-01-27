@@ -4,7 +4,7 @@ import { A } from "hookrouter";
 
 export const Navigation = () => {
 	return (
-		<div className="wrapper-navigation">
+		<div id="home" className="wrapper-navigation">
 			<div className="menu">
 				<ul>
 					<li>
@@ -26,6 +26,9 @@ export const Navigation = () => {
 					</li>
 					<li>
 						<A href="/contact">Contact</A>
+					</li>
+					<li>
+						<A href="/cart">Cart</A>
 					</li>
 				</ul>
 				<div className="search">

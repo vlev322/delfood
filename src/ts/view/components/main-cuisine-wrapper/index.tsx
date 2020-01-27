@@ -12,5 +12,8 @@ export const ContentWrapper = () => (
 			<Breadcrumbs />
 			<Cousines />
 		</Router>
+		<a href="#home" className="toTop">
+			To top ☝
+		</a>
 	</div>
 );
