@@ -34,6 +34,7 @@ export class CartService implements ICart {
 	public remove(id: number) {
 		const cartData = JSON.parse(localStorage.getItem("cart") || "{}");
 		delete cartData[id];
+		localStorage.setItem("cart", JSON.stringify(cartData));
 	}
 	public removeAll() {
 		localStorage.removeItem("cart");

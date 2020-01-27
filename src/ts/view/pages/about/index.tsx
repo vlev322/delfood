@@ -1,9 +1,10 @@
 import React from "react";
 
-import breackfast from "../../../../../style/img/about/breackfast.jpg";
-import lunch from "../../../../../style/img/about/lunch.jpg";
-import brunch from "../../../../../style/img/about/brunch.jpg";
-import { Gallery } from "../../gallery";
+import { Gallery } from "../../components/gallery";
+
+import breackfast from "../../../../style/img/about/breackfast.jpg";
+import lunch from "../../../../style/img/about/lunch.jpg";
+import brunch from "../../../../style/img/about/brunch.jpg";
 
 export const About = () => (
 	<section className="page-wrapper">
