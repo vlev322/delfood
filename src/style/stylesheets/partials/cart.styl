@@ -1,0 +1,52 @@
+.cart
+	max-width 90vw
+	margin 30px auto
+	text-align right
+	padding-bottom 60px
+
+	a.buy-btn
+		margin-top 20px
+
+	&-header, &-goods div
+		display flex
+		align-items center
+		justify-content space-between
+
+	&-header
+		border 1px solid #000
+		font-weight bold
+		text-align left
+		border-top-right-radius 10px
+		border-top-left-radius 10px
+
+		div
+			width 150px
+
+			&:first-child
+				padding-left 5px
+
+			&:last-child
+				display flex
+				justify-content center
+
+	&-goods
+		>div
+			border 1px solid #000
+			border-top none
+			white-space nowrap
+
+			&:last-child
+				border-bottom-right-radius 10px
+				border-bottom-left-radius 10px
+
+			div
+				width 150px
+				padding 4px 0
+				font-size 18px
+
+				&:first-child
+					padding-left 5px
+
+				&:last-child
+					display flex
+					justify-content center
