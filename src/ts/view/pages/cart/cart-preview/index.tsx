@@ -14,7 +14,7 @@ export const CartPreview = () => {
 		for (const good in _cart.get()) {
 			if (_cart.get().hasOwnProperty(good)) {
 				const goodItem = { ..._cart.get()[good], id: good };
-				goods.push(<CartItem key={goodItem.price} {...goodItem} />);
+				goods.push(<CartItem key={goodItem.price - +good + goodItem.quantity} {...goodItem} />);
 				_amount += goodItem.price * goodItem.quantity;
 			}
 		}

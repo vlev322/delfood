@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 
 import { MealItem } from "../meal-item";
 import { MealsService } from "../../../../services/meals/index";
@@ -14,34 +14,46 @@ interface IState {
 	meals: IMeal[];
 }
 
-export class MealCollection extends Component<IProps, IState> {
-	public state = { meals: [] };
+export const MealCollection = ({ name, day }: IProps) => {
+	const initialState: IState = { meals: [] };
 
-	private _cart = new CartService();
+	const _cart = new CartService();
 
-	public componentDidMount(): void {
+	const [meals, setMeals] = useState(initialState);
+
+	useEffect(() => {
 		const _mealService = new MealsService();
 		_mealService.getMealsAsync().then(result => {
-			const mealList: IMeal[] = result[this.props.name];
-			const meals = mealList.filter((current: { days: number[] }) => current.days.includes(this.props.day));
-			this.setState({ meals });
+			const mealList: IMeal[] = result[name];
+			const meals = mealList.filter((current: { days: number[] }) => current.days.includes(day));
+			setMeals({ meals });
 		});
-	}
+	}, []);
 
-	render() {
-		return (
-			<div className="meals">
-				<div>
-					{this.state.meals.length !== 0 ? (
-						this.state.meals.map((meal: any) => <MealItem _onClick={this._cart.add} key={meal.id} {...meal} />)
-					) : (
-						<>
-							<h2>On this day meals doesn't exist..</h2>
-							<p>Please, select another day.</p>
-						</>
-					)}
-				</div>
+	const _orderComplexMeal = (): void => {
+		console.log(meals);
+
+		meals.meals.map((meal: any) => _cart.add({ ...meal, id: meal.id + 100 }));
+	};
+	return (
+		<div className="meals">
+			<div>
+				{meals.meals.length !== 0 ? (
+					meals.meals.map((meal: any) => <MealItem _onClick={_cart.add} key={meal.id} {...meal} />)
+				) : (
+					<>
+						<h2>On this day meals doesn't exist..</h2>
+						<p>Please, select another day.</p>
+					</>
+				)}
+				<br />
+				<h2>Also, you can order complex dinner on this day</h2>
+				<section className="btn-wrapper">
+					<a className="buy-btn" onClick={_orderComplexMeal}>
+						Order complex dinner
+					</a>
+				</section>
 			</div>
-		);
-	}
-}
+		</div>
+	);
+};
